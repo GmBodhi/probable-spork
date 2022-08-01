@@ -1,0 +1,17 @@
+{
+  "name": "probable-spork",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "front": "cd packages/frontend && yarn start",
+    "back": "cd packages/backend && yarn start"
+  },
+  "repository": "https://github.com/GmBodhi/probable-spork",
+  "author": "Gm <zakuzzdj@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
+}
