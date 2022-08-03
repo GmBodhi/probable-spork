@@ -10,26 +10,26 @@ import {
   Badge,
   Typography,
   styled,
-} from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import shallow from "zustand/shallow";
-import { useDrawerStore, useFriendsStore, PartialUser } from "../store";
+} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import shallow from 'zustand/shallow';
+import { useDrawerStore, useFriendsStore, PartialUser } from '../store';
 
-const settings = ["Profile", "Dashboard", "Logout"];
+const settings = ['Profile', 'Dashboard', 'Logout'];
 
 export default function FriendsAndSettings() {
-  const state = useDrawerStore((state) => state);
+  const state = useDrawerStore(state => state);
 
   return (
     <Box>
       <Box
         sx={{
           width: 250,
-          height: "100%",
+          height: '100%',
         }}
         onClick={state.toggleRightDrawer(false)}
         onKeyDown={state.toggleRightDrawer(false)}
-        color="rgba(0, 0, 0, 0.84)"
+        color='rgba(0, 0, 0, 0.84)'
       >
         <Settings />
         <Divider />
@@ -46,10 +46,10 @@ function Settings() {
     <List>
       <ListItem>
         <ListItemText disableTypography>
-          <Typography variant="h5">Settings</Typography>
+          <Typography variant='h5'>Settings</Typography>
         </ListItemText>
       </ListItem>
-      {settings.map((text) => (
+      {settings.map(text => (
         <ListItem key={text} disablePadding>
           <ListItemButton onClick={() => navigate(text.toLowerCase())}>
             <ListItemText primary={text} />
@@ -70,15 +70,15 @@ function Friend({ friend }: { friend: PartialUser }) {
     >
       <ListItem>
         <Badge
-          color="success"
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
+          color='success'
+          overlap='circular'
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+          variant='dot'
           sx={{
             marginRight: 2,
-            "& .MuiBadge-dot": {
-              backgroundColor: "#44b700",
-              color: "#44b700",
+            '& .MuiBadge-dot': {
+              backgroundColor: '#44b700',
+              color: '#44b700',
               boxShadow: `0 0 0 2px #fff`,
             },
           }}
@@ -86,7 +86,7 @@ function Friend({ friend }: { friend: PartialUser }) {
           <Avatar src={friend.avatar} />
         </Badge>
         <ListItemText disableTypography>
-          <Typography variant="h6" sx={{ fontSize: ".9rem" }}>
+          <Typography variant='h6' sx={{ fontSize: '.9rem' }}>
             {friend.name}
           </Typography>
         </ListItemText>
@@ -96,16 +96,16 @@ function Friend({ friend }: { friend: PartialUser }) {
 }
 
 function Friends() {
-  const friends = useFriendsStore((state) => state.friends) ?? [];
+  const friends = useFriendsStore(state => state.friends) ?? [];
 
   return (
     <List>
       <ListItem>
         <ListItemText disableTypography>
-          <Typography variant="h5">Friends</Typography>
+          <Typography variant='h5'>Friends</Typography>
         </ListItemText>
       </ListItem>
-      {friends.map((friend) => (
+      {friends.map(friend => (
         <Friend key={friend.id} friend={friend} />
       ))}
     </List>

@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "front": "cd packages/frontend && yarn start",
-    "back": "cd packages/backend && yarn start"
+    "back": "cd packages/backend && yarn dev",
+    "build": "yarn build:front && yarn build:back",
+    "build:front": "cd packages/frontend && yarn build",
+    "build:back": "cd packages/backend && yarn build",
+    "start": "yarn build && yarn back"
   },
   "repository": "https://github.com/GmBodhi/probable-spork",
   "author": "Gm <zakuzzdj@gmail.com>",

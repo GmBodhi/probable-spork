@@ -1,0 +1,79 @@
+.QuestionMountAnimationLeft {
+    transition: 0.1s ease;
+    animation-name: QuestionMountAnimationLeft;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.QuestionUnMountAnimationLeft {
+    transition: 0.1s ease;
+    animation-name: QuestionUnMountAnimationLeft;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.QuestionMountAnimationRight {
+    transition: 0.1s ease;
+    animation-name: QuestionMountAnimationRight;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.QuestionUnMountAnimationRight {
+    transition: 0.1s ease;
+    animation-name: QuestionUnMountAnimationRight;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes QuestionMountAnimationLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes QuestionUnMountAnimationLeft {
+    0% {
+        opacity: 1;
+        transform: none;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+}
+
+@keyframes QuestionMountAnimationRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes QuestionUnMountAnimationRight {
+    0% {
+        opacity: 1;
+        transform: none;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(10%);
+    }
+}

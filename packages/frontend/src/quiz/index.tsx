@@ -1,38 +1,26 @@
-import { MobileStepper } from "@mui/material";
-import { useCallback, useState } from "react";
-import { useParams } from "react-router-dom";
-import Timer from "../Nav/timer";
-import getQuiz from "./getQuiz";
+import { Button } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Quiz as QuizType } from '../store';
+import getQuiz from './getQuiz';
+import QuizUI from './quizUI';
 
 export default function Quiz() {
-  const quizId = useParams().id as string;
+  const [quiz, setQuiz] = useState<QuizType | null>(null);
+  const [visible, setVisible] = useState<boolean>(false);
 
-  const quiz = getQuiz(quizId);
+  const id = useParams().id as string;
 
-  const [activeQuestion, setActiveQuestion] = useState(0);
+  useEffect(() => {
+    getQuiz(id)
+      .then(quiz => setQuiz(quiz))
+      .catch(err => console.error(err));
+  }, [id]);
 
   return (
     <>
-      <Timer />
-    <MobileStepper
-      variant="progress"
-      steps={6}
-      position="bottom"
-      activeStep={activeQuestion}
-      LinearProgressProps={{
-        variant: "determinate",
-        sx: {
-          height: ".5rem",
-          borderRadius: ".5rem",
-          ".MuiLinearProgress-bar1Determinate": {
-            borderRadius: ".5rem",
-          },
-        },
-      }}
-      sx={{ maxWidth: "100vw", flexGrow: 1 }}
-      nextButton={<span></span>}
-      backButton={<span></span>}
-    />
+      <Button onClick={() => setVisible(true)}>Start</Button>
+      <QuizUI quiz={quiz} isVisible={visible} setIsVisible={setVisible} />
     </>
   );
 }

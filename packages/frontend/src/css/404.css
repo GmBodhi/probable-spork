@@ -1,139 +1,137 @@
-
-.blackout{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,.95);
-    transition: .1s ease;
-    animation: fadeout 1s normal forwards;
+.blackout {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  transition: 0.1s ease;
+  animation: fadeout 1s normal forwards;
 }
 
 @keyframes fadeout {
-    0% {
-        opacity: 0;
-    }
-    60% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #main404 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(255, 255, 255);
-    font-family: sans-serif;
-    max-width: 340px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  max-width: 340px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #main404 .message404 {
-    font-size: 16px;
-    text-align: center;
+  font-size: 16px;
+  text-align: center;
 }
 
 #main404 .message404 h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 11em;
-    transform: skewY(-5deg);
-    transition: 0.4s ease-in-out all;
+  margin: 0;
+  padding: 0;
+  font-size: 11em;
+  transform: skewY(-5deg);
+  transition: 0.4s ease-in-out all;
 }
 
 #main404 .message404 h1:hover {
-    text-shadow: 20px 20px 0 rgba(61, 158, 211, 0.1);
+  text-shadow: 20px 20px 0 rgba(61, 158, 211, 0.1);
 }
 
 @media (max-width: 300px) {
-    #main404 .message404 h1 {
-        font-size: 50vw;
-    }
+  #main404 .message404 h1 {
+    font-size: 50vw;
+  }
 }
 
 #main404 .message404 h3 {
-    color: #3d9ed3;
-    font-size: 0.9em;
-    font-weight: lighter;
-    line-height: 1;
+  color: #3d9ed3;
+  font-size: 0.9em;
+  font-weight: lighter;
+  line-height: 1;
 }
 
 @media (max-width: 300px) {
-    #main404 .message404 h3 {
-        font-size: 5vw;
-    }
+  #main404 .message404 h3 {
+    font-size: 5vw;
+  }
 }
 
 #main404 .footer404 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
 }
 
 #main404 .footer404 a {
-    position: relative;
-    flex: 1;
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    border-radius: 3px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    margin: 0 20px;
-    text-align: center;
-    padding: 10px 0;
-    overflow: hidden;
-    transition: all 0.2s ease-in-out;
-    z-index: 3;
+  position: relative;
+  flex: 1;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  margin: 0 20px;
+  text-align: center;
+  padding: 10px 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  z-index: 3;
 }
 
 @media (max-width: 300px) {
-    #main404 .footer404 a {
-        flex: 5 100%;
-        width: 100%;
-    }
+  #main404 .footer404 a {
+    flex: 5 100%;
+    width: 100%;
+  }
 }
 
 #main404 .footer404 a:hover {
-    border: 1px solid #ffffff;
-    color: #121212;
+  border: 1px solid #ffffff;
+  color: #121212;
 }
 
 #main404 .footer404 a:hover span {
-    width: 310px;
-    height: 310px;
+  width: 310px;
+  height: 310px;
 }
 
 #main404 .footer404 a span {
-    content: '';
-    position: absolute;
-    background: #3d9ed3;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    transition: all 0.5s ease;
-    z-index: -1;
+  content: '';
+  position: absolute;
+  background: #3d9ed3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  z-index: -1;
 }
 
 @media (max-width: 300px) {
-    #main404 .footer404 a span {
-        transition: all 0.2s ease-in;
-    }
+  #main404 .footer404 a span {
+    transition: all 0.2s ease-in;
+  }
 }
 
-
 @media (max-width: 300px) {
-    #main404 .footer404 .legal {
-        font-size: 4vw;
-        flex: 5 100%;
-        padding: 5px 10px;
-    }
+  #main404 .footer404 .legal {
+    font-size: 4vw;
+    flex: 5 100%;
+    padding: 5px 10px;
+  }
 }
